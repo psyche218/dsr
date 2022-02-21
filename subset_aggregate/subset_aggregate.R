@@ -1,0 +1,18 @@
+data("iris")
+str(iris)
+subset(iris,iris$Sepal.Length < 7)
+subset(iris,iris$Sepal.Width > 4)
+subset(iris,iris$Petal.Length < 5)
+subset(iris,iris$Petal.Width > 5)
+
+
+agg_mean = aggregate(iris[,1:4], by=list(iris$Species),FUN=mean) 
+agg_sum = aggregate(iris[,1:4], by=list(iris$Species),FUN=sum)
+agg_sd = aggregate(iris[,1:4], by=list(iris$Species),FUN=sd)
+agg_min = aggregate(iris[,1:4], by=list(iris$Species),FUN=min)
+agg_max = aggregate(iris[,1:4], by=list(iris$Species),FUN=max) 
+print(agg_mean)
+print(agg_sum)
+print(agg_sd)
+print(agg_min)
+print(agg_max)
